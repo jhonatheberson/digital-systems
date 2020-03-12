@@ -26,7 +26,8 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  
+// put your main code here, to run repeatedly:
   char leitura = Serial.read();
   ingnicao = analogRead(ingni);
   
@@ -53,41 +54,16 @@ void loop() {
         digitalWrite(ligar_farol, HIGH);
       }
       if(leitura == '2'){
-          digitalWrite(pisc_esq, HIGH);
-          delay(1000);
-          digitalWrite(pisc_esq, LOW);
-          delay(1000);
-          digitalWrite(pisc_esq, HIGH);
-          delay(1000);
-          digitalWrite(pisc_esq, LOW);
-          delay(1000);
-          digitalWrite(pisc_esq, HIGH);
-          delay(1000);
-          digitalWrite(pisc_esq, LOW);
-          delay(1000);
-          digitalWrite(pisc_esq, HIGH);
-          delay(1000);
-          digitalWrite(pisc_esq, LOW);
-          delay(1000);
+        digitalWrite(pisc_direi, HIGH);
+        delay(100);
+        digitalWrite(pisc_direi, LOW);
       }
       if(leitura == '3'){
         digitalWrite(pisc_direi, HIGH);
-        delay(1000);
+        delay(100);
         digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
       }
+      
       combustivel = analogRead(combust);
       Serial.write(combustivel);
   
@@ -108,54 +84,32 @@ void loop() {
         digitalWrite(ligar_farol, HIGH);
       }
     if(leitura == '2'){
-        digitalWrite(pisc_esq, HIGH);
-        delay(1000);
-        digitalWrite(pisc_esq, LOW);
-        delay(1000);
-        digitalWrite(pisc_esq, HIGH);
-        delay(1000);
-        digitalWrite(pisc_esq, LOW);
-        delay(1000);
-        digitalWrite(pisc_esq, HIGH);
-        delay(1000);
-        digitalWrite(pisc_esq, LOW);
-        delay(1000);
-        digitalWrite(pisc_esq, HIGH);
-        delay(1000);
-        digitalWrite(pisc_esq, LOW);
-        delay(1000);
+          
+          digitalWrite(pisc_direi, HIGH);
+          delay(100);
+          digitalWrite(pisc_direi, LOW);
+          
+        
     }
     if(leitura == '3'){
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
-        digitalWrite(pisc_direi, HIGH);
-        delay(1000);
-        digitalWrite(pisc_direi, LOW);
-        delay(1000);
+          digitalWrite(pisc_direi, HIGH);
+          delay(100);
+          digitalWrite(pisc_direi, LOW);
+        
     }
     combustivel = analogRead(combust);
     velocidade = analogRead(veloc);
-    delay(100);
-    Serial.write(combustivel);
-    Serial.write(velocidade);
-    Serial.write(ingnicao); 
-//    Serial.println();
-//    Serial.print("Combustivel: ");
-//    Serial.println(combustivel);
-//    Serial.print("Velocidade: ");
-//    Serial.println(velocidade);
-//    Serial.println(ingnicao);
-//    
+//    Serial.write(combustivel);
+//    Serial.write(velocidade);
+//    Serial.write(ingnicao); 
+    Serial.println();
+    Serial.print("Combustivel: ");
+    Serial.println(combustivel);
+    Serial.print("Velocidade: ");
+    Serial.println(velocidade);
+    Serial.print("ingnição: ");
+    Serial.println(ingnicao);
+    
   }
   if(ingnicao > 900)
   {
